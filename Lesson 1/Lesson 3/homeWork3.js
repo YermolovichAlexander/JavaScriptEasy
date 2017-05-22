@@ -122,3 +122,13 @@ fizzBuzz(21); // 'Fizz'
 последний всегда функция.
 Добавьте первые 3 аргумента в массив и вызовите переданную функцию с данным массивом
 */
+function args(arg1, arg2, arg3, arg4) {
+  let arr = [];
+  arr[0] = arg1;
+  arr[1] = arg2;
+  arr[2] = arg3;
+  arg4(arr);
+}
+args(1, 2, 3, function(x){
+  console.log(x);
+});
