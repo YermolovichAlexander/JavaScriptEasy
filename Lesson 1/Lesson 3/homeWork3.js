@@ -5,16 +5,12 @@
 и возвращать новый объект изменяя свойство name
 в большой регистр
 */
-// На дом ! кто не сделал
 
 function arg1 (argumentAlex){
        let xxx =  'name';
        return (`Alex ${xxx}`)
 };
 console.log(arg1().toUpperCase());
-
-
-
 
 
 /*
@@ -74,7 +70,14 @@ var myName = { name: 'Oleg' };
 function addNameToUser(newKey, newValue, userName) {
 }
 */
+let myName = { name: 'Oleg'};
 
+function addNameToUser( newKey, newValue, userName){
+  let newName = {};
+  newName [newKey]= newValue;
+  newName.name = newName.name || userName.name;
+  return newName;
+}
 console.log(addNameToUser('family', '%Lustenko%', myName));
 /* {name:'Oleg', family:'%Lustenko%'} */
 
@@ -93,7 +96,17 @@ console.log(myName);
 */
 
 function fizzBuzz(num) {
-  /* Ваш код здесь */
+  if (num % 3 === 0 || num % 5 === 0) {
+    if(num % 3 === 0 && num % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if(num % 3 === 0) {
+        console.log("Fizz");
+    } else {
+        console.log("Buzz");
+    }
+} else {
+    console.log(num);
+    }
 }
 
 fizzBuzz(1); // 1
