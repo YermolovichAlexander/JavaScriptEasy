@@ -132,3 +132,15 @@ function args(arg1, arg2, arg3, arg4) {
 args(1, 2, 3, function(x){
   console.log(x);
 });
+
+
+function massive ( arg1,arg2,arg3,arg4) {
+  let array =[];
+  array.push(arg1);
+  array.push(arg2);
+  array.push(arg3);
+  arg4(array);
+}
+massive(1,2,3 ,function(e){
+console.log(e);
+});
