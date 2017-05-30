@@ -9,7 +9,7 @@
  [ 'a', 0, 0, 'b', null, 'c', 'd', 0, 1, false, 0, 1, 0, 3, [], 0, 1, 9, 0, 0, {}, 0, 0, 9 ] => ["a","b",null,"c","d",1,false,1,3,[],1,9,{},9,0,0,0,0,0,0,0,0,0,0]
  [ 0, 1, null, 2, false, 1, 0 ] => [1,null,2,false,1,0,0]
  */
-let array = [0, 1, null, 2, false, 1, 0 ];
+let array = ['a', 0, 0, 'b', null, 'c', 'd', 0, 1, false, 0, 1, 0, 3, [], 0, 1, 9, 0, 0, {}, 0, 0, 9];
  function moveZero (solution){
 let search = 0;
 let zero = [];
@@ -78,14 +78,14 @@ console.log(minimalNumber([-4,-10,25,10]));
  capMe(['jo', 'nelson', 'jurie'])     // returns ['Jo', 'Nelson', 'Jurie']
  capMe(['KARLY', 'DANIEL', 'KELSEY']) // returns ['Karly', 'Daniel', 'Kelsey']
  */
-function Upper(arr){
+function upper(arr){
 	for (var i = 0; i < arr.length; i++){
 		arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase();
     }
 	return arr;
 }
-console.log(Upper(['KARLY', 'DANIEL', 'KELSEY']));
-console.log(Upper(['jo', 'nelson', 'jurie']));
+console.log(upper(['KARLY', 'DANIEL', 'KELSEY']));
+console.log(upper(['jo', 'nelson', 'jurie']));
 
 //@SUPER
 /*

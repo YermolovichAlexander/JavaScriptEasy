@@ -38,7 +38,7 @@ for(let key in obj){
                  return;
                 }
             }
-        }   
+        }
             console.log('privet'); 
             }
         }
