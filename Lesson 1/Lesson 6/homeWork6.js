@@ -407,15 +407,20 @@ console.log(reverseEachWord('Hi my Name is', false));
 
 //Both - Java - and - Java - Script - is - programming - and - programming - OOPBased
 
-// function wordCounter(sentence) {
-//   let arr = sentence.split(' ');
-//   let obj = {};
-//   arr.forEach(function(elem, index, array){
-// 
-//   });
-// return obj;
-// }
-// console.log(wordCounter('Both Java and Java Script is programming and programming OOPBased Language'));
+  function wordCounter(sentence) {
+   let obj = {};
+   //создать обьект  который содержит все необхадимые ключи
+   sentence.split(' ').forEach(function(elem){
+     // в самой первой итерации
+     if(obj[elem] === undefined){
+       obj[elem] = obj[elem] +1;
+     }else{
+   obj[elem] = 1;
+  }
+   });
+ return obj;
+ }
+ console.log(wordCounter('Both Java and Java Script is programming and programming OOPBased Language'));
 // 
 /*
  {
@@ -458,10 +463,23 @@ console.log(reverseEachWord('Hi my Name is', false));
  */
 console.log(createHashTags(listOfCompanys));
 function createHashTags(arr) {
-  var obj = {}
-    listOfCompanys.forEach(function(value){
-    obj[value._id] = value.company;
+  let obj = {}
+    arr.forEach(function(elem){
+    obj[elem._id] = elem.company;
   })
   return obj;
 }
 //{"584babb6eeb4137cf14c37a3":"ASIMILINE", 584babb6eeb4137cf14c37a3:'Company2', }
+
+function uniqueElements (arr) {
+  let uniqueArr = [];
+  arr.forEach(function(elem, index){
+    // if(uniqueArr.indexOf(elem) === -1){
+    //   uniqueArr.push(elem);
+    // }
+return arr.indexOf(elem) === index;
+   // uniqueArr.indexOf(elem) === -1 ? uniqueArr.
+  });
+}
+
+let  notUniqArray = [1, ,1 ,2 ,2 ,2 ,4 ,5 ,6 ,7, 8, 5, 22, 1];
