@@ -71,11 +71,11 @@ console.log(test);
  *  Когда заканчивается счетчик, отображается ошибка
  *
  * */
-
+// Процедура
 let jun = {};
 function methodCounter(obj, name, num, fn) {
   let counter = num;
-  return (obj[name] = function() {
+  return (obj[name] = function() { //function(...args){} можно так
       if (counter <= 0) {
         console.error("ERROR ! add more methods");
         return;
