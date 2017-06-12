@@ -12,16 +12,16 @@
  * */
 
 function solution1() {
-var string = '';
+  var string = '';
 
-return function (words) {
-    if(arguments.length ==0) {
-        return string;
-        //console.log(string);
+  return function (words) {
+    if (arguments.length == 0) {
+      return string;
+      //console.log(string);
     }
     return (string += words + ' ');
     //console.log(words)
-    };  
+  };
 };
 
 let stringBuffer = solution1();
@@ -30,34 +30,34 @@ stringBuffer('Замыкания'); // Замыкания
 stringBuffer('Использовать нужно'); // Замыкания Использовать нужно
 stringBuffer('Привет'); // Замыкания Использовать нужно Привет
 // вызываем много раз
- console.log( stringBuffer() );
+console.log(stringBuffer());
 
- /*
+/*
  *
  * TASK 2
  * Напишите функцию которая принимает в качестве аргумента строку
  * из скобочек и посчитайте, * что все скобочки закрываются корректно
  *
  * */
-let close = ["}", ")", "}"]; 
-let open =  ["{", "(", "{"]; 
+let close = ["}", ")", "}"];
+let open = ["{", "(", "{"];
 
 function validBraces(str) {
-  console.log(str); 
+  console.log(str);
   let brace = [];
   for (let i = 0; i < str.length; i++) {
     if (open.indexOf(str[i]) > -1) {
-         brace.push(str[i]); 
+      brace.push(str[i]);
     }
     if (close.indexOf(str[i]) > -1) {
-      if (open.indexOf(brace[brace.length - 1]) - close.indexOf(str[i]) !==0) {
+      if (open.indexOf(brace[brace.length - 1]) - close.indexOf(str[i]) !== 0) {
         return false;
       } else {
         brace.pop();
       }
     }
   }
-  return (brace.length == 0 ? true : false)  
+  return (brace.length == 0 ? true : false)
 }
 
 
@@ -80,21 +80,24 @@ console.log(validBraces('{([()(){])}')); //=> returns false
 
 
 
-var seconds = 0;
+//1. из javascript делаеться запрос на сервер
+//2.После тоо как элемент был добавлен на страницу и завершился процесс 
+// рендеринг(после того как завершилось)
 function makeCallback(fn) {
   for (let i = 1; i <= 3; i++) {
-      if(setTimeout==3){
-         console.log('THE LAST LAST comment');
-      }
-    setTimeout(function() {
-        if(seconds >= 3 && seconds == i){
-      console.log(i);
+    if (setTimeout == 3) {
+      console.log('THE LAST LAST comment');
     }
+    setTimeout(function () {
+      console.log(i);
+      if (i == 10) {
+        fn();
+      }
     }, i * 300);
   }
 }
 
-makeCallback(function() {  
+makeCallback(function () {
   console.log('THE LAST LAST comment');
 });
 
@@ -110,15 +113,18 @@ makeCallback(function() {
  * Вычисления должны кешироваться, если в функцию попадает закешированное 
  * значение, в консоле должно отобразиться
  * Значение взято из кэша
+ * Нельзя использовать внешние значения
  *
  * */
-// function fnc(n) {
-//   let summ = 0;
-//   for (let i = 0; i <= n; i++) {
-//     summ += i;
-//   }
-//   return { [n]: summ };
-// }
+function fnc(n) {
+  let summ = 0;
+  for (let i = 0; i <= n; i++) {
+    summ += i;
+  }
+  return {
+    [n]: summ
+  };
+}
 
 function sum(n) {
   let summ = 0;
@@ -133,6 +139,12 @@ function sum(n) {
   }
 }
 
+function sum(num) {
+  if (!sum.cache) sum.cache = {};
+  if (sum.cache[num]) {
+
+  }
+}
 
 sum(5); // 15 Значение кешировано
 sum(5); // 15 Значение взято из кэша
