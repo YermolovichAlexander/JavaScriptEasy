@@ -151,7 +151,7 @@
 
 
 
-const showFruits = {
+const user = {
     name: 'Jack',
     fruits: 'mango, kivi, banan',
     friends: [
@@ -168,13 +168,17 @@ const showFruits = {
         fruits: 'Хлепцы это преелесть'
     },
     ],
-    showFruits(){
-      console.log(this.fruits)
+    showFruits() {
+        console.log(this.fruits);
     },
-    showFruitsFriends() {
-        console.log(this.showFruits.call(friends))
-    }
+    showFriendsFruits() {
+        this.friends.forEach(function(elem) {
+            user.showFruits.call(elem);
+        });
+    },
 };
+console.log(user.showFruits());
+console.log(user.showFriendsFruits());
 
 //имя друга и каки друг любит фрукты
 

@@ -278,8 +278,13 @@ let junior = {};
 // fn.length == arguments.length
 
 function addMethod(object, name, fn) {
-   object[fn.length] = fn;
-   object[name] = (...arg) => {object[arg.length]()}; 
+  //  object[fn.length] = fn;
+  //  object[name] = (...arg) => {object[arg.length]()}; 
+  let method = object[name];
+
+  object[name] = function () {
+    if(fn.length == arguments.length)
+  }
 }
 
 addMethod(junior, 'ok', function() {
