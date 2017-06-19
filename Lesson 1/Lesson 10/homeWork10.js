@@ -142,3 +142,23 @@ console.log('HelloLIST>>>>>>>>', helloList);
  * $('body').add('li', 'hi').render() // <body><li>hi</li></body>
  *
  * */
+function $(tagMain, contentMain) {
+  return {
+    tags:[{tagName: tagMain, content: contentMain = ''}],
+    add(tagName, content) {
+      //this.tags.push({tag:tag, content: content})  //тоже самое что 
+      this.tags.push({tagName, content});
+      return this;
+    },
+    render() {
+      const biginArr= [];
+      const endArr = [];
+      this.tags.forEach((tag) => {
+        biginArr.push(`<${tag.tagName}>${tag.content}`);
+        endArr.unshift(`</${tag.tagName}>`);
+      });
+      this.tags = [];
+      return biginArr.concat(endArr).join('');
+    }
+    }
+  };
