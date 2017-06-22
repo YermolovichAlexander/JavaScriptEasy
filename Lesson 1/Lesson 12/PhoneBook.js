@@ -78,7 +78,6 @@ for (let i = 0; i < 10; i++) {
 console.log(PhoneBook);
 PhoneBook.delUser("Alex");
 PhoneBook.delUser("Yemolovich");
-//console.log(PhoneBook.searchUser("Yemolovich 2")[0]);
 PhoneBook.changeContent(5, "123", "312", "123");
 console.log(PhoneBook.sortByy("telNumb"));
 
