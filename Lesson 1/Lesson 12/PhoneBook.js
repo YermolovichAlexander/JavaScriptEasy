@@ -54,8 +54,8 @@ function GreatPhoneBook() {
     });
   };
   // изменяет контентт
-  this.changeContent = function(userToChange, newTelNumb, newFName, newSName) {
-    this.addUser(newTelNumb, newFName, newSName, userToChange);
+  this.changeContent = function(userToChange, newTelNumber, newFName, newLName) {
+    this.addUser(newTelNumber, newFName, newLName, userToChange);
   };
   // сортировка по столбцу
   this.sortByy = function(sortValue) {
@@ -65,7 +65,7 @@ function GreatPhoneBook() {
   };
 }
 
-PhoneBook = new CreatePhoneBook();
+PhoneBook = new GreatPhoneBook();
 console.log(PhoneBook.addChars("0931632461", "() --", 0, 4, 5, 8, 11)); //
 
 console.log(PhoneBook.numberOnly("0931632467"));
@@ -78,7 +78,7 @@ for (let i = 0; i < 10; i++) {
 console.log(PhoneBook);
 PhoneBook.delUser("Alex");
 PhoneBook.delUser("Yemolovich");
-console.log(PhoneBook.searchUser("Yemolovich 2")[0]);
+//console.log(PhoneBook.searchUser("Yemolovich 2")[0]);
 PhoneBook.changeContent(5, "123", "312", "123");
-console.log(PhoneBook.sortByyy("telNumb"));
+console.log(PhoneBook.sortByy("telNumb"));
 
