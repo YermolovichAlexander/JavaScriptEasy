@@ -74,7 +74,7 @@ slider.render();
  *
  *
  * */
-class MakeCssStyle {
+class TheCssStyle {
     constructor() {}
     topStyle(tag, obj) {
         let newTag = document.createElement(`${tag}`);
@@ -90,8 +90,10 @@ class MakeCssStyle {
         newTag.style[styleName] = styleValue;
     }
 }
-let makeCssStyle = new MakeCssStyle();
-makeCssStyle.topStyle('fetch', { backgroundColor: 'blue' })
+let theCssStyle = new TheCssStyle();
+theCssStyle.topStyle('fetch', {
+    backgroundColor: 'blue'
+})
 
 
 /* @SUPER
