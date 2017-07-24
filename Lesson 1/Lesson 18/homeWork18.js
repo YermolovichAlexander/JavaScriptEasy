@@ -51,7 +51,7 @@ Linux:
 кликаем сюда -> []|[]|[x] <- загорается тут
                 []|[]|[x]
 */
-const table = document.createElement("table");
+const createtable = document.createElement("table");
 document.body.appendChild(table);
 let str = '';
 for (let i = -2; i <= 2; i++) {
@@ -61,7 +61,7 @@ for (let i = -2; i <= 2; i++) {
   }
   str += '</tr>';
 }
-table.innerHTML = str;
+createtable.innerHTML = str;
 
 function colors() {
   if (this.style.backgroundColor == 'black') {
@@ -69,7 +69,7 @@ function colors() {
   } else this.style.backgroundColor = 'black'
 }
 
-table.onclick = (i) => {
+createtable.onclick = (i) => {
   let qwerty = i.target.id.split('_');
   let rec = document.getElementById((qwerty[0] * -1) + "_" + (qwerty[1] * -1));
   colors.call(rec);
