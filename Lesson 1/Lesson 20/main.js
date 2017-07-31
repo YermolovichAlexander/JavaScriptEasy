@@ -1,18 +1,12 @@
-// const arr = [];
-// for (var i = 0; i < 5; i++) {
-//     ((INDEXTOCALL => {
-//             arr.push(() => {
-//                 console.log(INDEXTOCALL);
-//             });
-//         })(i);
-//     }
-// изменить var на let 
-// сделать замыкание 
 const url2 = 'http://easycode-js.herokuapp.com/';
-const url = 'https://google.com/';
+const url3 = 'https://google.com/';
+
+const url= `https://jsonplaceholder.typicode.com/users/:id`;
+const usersId =[1,2,3];
 
 const button = document.querySelector('button');
 const button2 = document.querySelector('.btn');
+const button3 = document.querySelector('idUsers');
 const app = document.querySelector('.app');
 const form = document.forms;
 
@@ -28,18 +22,16 @@ const serverRequest = () => {
     });
 
     xhr.open('GET', url + 'AE', true);
-
     xhr.send();
 };
 
 button.addEventListener('click', () => {
-    serverRequest()
+    serverRequest();
     
 });
 // -------------------------------------------------------------------
 button2.addEventListener('click', () => {
     let xhrPost = new XMLHttpRequest();
-
     xhrPost.addEventListener('readystatechange', () => {
         if (xhrPost.readyState === 4) {
             console.log('response: ', JSON.parse(xhrPost.response));
@@ -85,3 +77,18 @@ myForm.addEventListener('submit', e => {
 // FormData => Content-Type: 'multipart/form-data' - значения в форме
 //Content-Type:application/x-www-form-urlencoded-file, Binary data
 //В зависимости от разного типа данных, необхадимо указывать различные заголовке при отправке
+
+
+button3.addEventListener('click', () => {
+
+    let getIdUsers = new XMLHttpRequest();
+    getIdUsers.open('GET', url, true);
+    getIdUsers.setRequestHeader('Content-Type', 'application.json');
+    getIdUsers.send(JSON.stringify(usersId));
+
+    getIdUsers.onreadystatechange = () => {
+        if(getIdUsers.readyState === 3) {
+            document.body.innerHTML += `<pre>${getIdUsers.responseText}</pre> <hr />`;
+        }
+    };
+});
